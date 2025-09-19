@@ -1,1 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paper demo — Title & Audio Grid</title>
+  <style>
+    :root{
+      --max-width:1100px;
+      --muted:#666;
+      --card-bg:#fafafa;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:24px; color:#111}
+    .container{max-width:var(--max-width);margin:0 auto}
+    header{padding:18px 0;border-bottom:1px solid #eee}
+    h1{margin:0;font-size:1.6rem}
+    .meta{margin-top:6px;color:var(--muted)}
+    .authors{font-weight:600}
+    .abstract{margin:20px 0;padding:16px;background:linear-gradient(180deg,#fff,#fbfbff);border-radius:10px;border:1px solid #eee}
+    .abstract h2{margin-top:0;font-size:1rem}
+    .demo{margin-top:24px}
+    .demo h2{margin:0 0 12px 0}
+    /* Grid: 2 columns on medium+, 1 column on small screens */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media (max-width:700px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card-bg);padding:12px;border-radius:var(--radius);border:1px solid #eaeaea;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+    .card .title{font-size:0.95rem;font-weight:600}
+    .card .desc{font-size:0.86rem;color:var(--muted)}
+    .card audio{width:100%;outline:none}
+    footer{margin-top:26px;color:var(--muted);font-size:0.88rem}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="paper-title">Paper Title Goes Here: A Concise & Catchy Title</h1>
+      <div class="meta">
+        <div class="authors" id="paper-authors">First Author¹, Second Author², Third Author³</div>
+        <div class="affiliations" id="paper-affiliations">¹Dept A — University X · ²Dept B — Company Y · ³Dept C — Institute Z</div>
+      </div>
+    </header>
+
+    <section class="abstract" aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p id="paper-abstract">This is a short abstract of the paper. Replace this placeholder text with your paper's true abstract. Keep it concise — two to four sentences summarising the motivation, method, and main result.</p>
+    </section>
+
+    <section class="demo" aria-labelledby="demo-heading">
+      <h2 id="demo-heading">Demo</h2>
+      <p class="desc">Below are four example pairs of audio results from the paper. Each row shows an input–output pair for comparison.</p>
+
+      <div class="grid" id="audio-grid">
+        <!-- Row 1 -->
+        <div class="card">
+          <div class="title">Example 1 — Input</div>
+          <audio controls preload="none" src="audio/demo1_input.mp3">Your browser does not support the audio element.</audio>
+        </div>
+        <div class="card">
+          <div class="title">Example 1 — Output</div>
+          <audio controls preload="none" src="audio/demo1_output.mp3">Your browser does not support the audio element.</audio>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="card">
+          <div class="title">Example 2 — Input</div>
+          <audio controls preload="none" src="audio/demo2_input.mp3">Your browser does not support the audio element.</audio>
+        </div>
+        <div class="card">
+          <div class="title">Example 2 — Output</div>
+          <audio controls preload="none" src="audio/demo2_output.mp3">Your browser does not support the audio element.</audio>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="card">
+          <div class="title">Example 3 — Input</div>
+          <audio controls preload="none" src="audio/demo3_input.mp3">Your browser does not support the audio element.</audio>
+        </div>
+        <div class="card">
+          <div class="title">Example 3 — Output</div>
+          <audio controls preload="none" src="audio/demo3_output.mp3">Your browser does not support the audio element.</audio>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="card">
+          <div class="title">Example 4 — Input</div>
+          <audio controls preload="none" src="audio/demo4_input.mp3">Your browser does not support the audio element.</audio>
+        </div>
+        <div class="card">
+          <div class="title">Example 4 — Output</div>
+          <audio controls preload="none" src="audio/demo4_output.mp3">Your browser does not support the audio element.</audio>
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer>
+      Tip: place your audio files in the `audio/` folder next to this HTML file (e.g. <code>audio/demo1_input.mp3</code> and <code>audio/demo1_output.mp3</code>).
+    </footer>
+  </div>
+</body>
+</html>
 
