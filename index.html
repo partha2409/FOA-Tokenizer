@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Paper demo — Title & Audio Grid</title>
+  <title>FOA Tokenizer</title>
   <style>
     :root{
       --max-width:1100px;
@@ -40,21 +40,25 @@
 <body>
   <div class="container">
     <header>
-      <h1 id="paper-title">Paper Title Goes Here: A Concise & Catchy Title</h1>
+      <h1 id="paper-title">FOA Tokenizer: Low-Bitrate Neural Codec for First Order Ambisonics with Spatial Consistency Loss</h1>
       <div class="meta">
-        <div class="authors" id="paper-authors">First Author¹, Second Author², Third Author³</div>
-        <div class="affiliations" id="paper-affiliations">¹Dept A — University X · ²Dept B — Company Y · ³Dept C — Institute Z</div>
+        <div class="authors" id="paper-authors">Parthasaarathy Sudarsanam¹, Sebastian Braun², Hannes Gamper³</div>
+        <div class="affiliations" id="paper-affiliations">¹Tampere University, Finland · ²Microsoft Research, USA</div>
       </div>
     </header>
 
     <section class="abstract" aria-labelledby="abstract-heading">
       <h2 id="abstract-heading">Abstract</h2>
-      <p id="paper-abstract">This is a short abstract of the paper. Replace this placeholder text with your paper's true abstract. Keep it concise — two to four sentences summarising the motivation, method, and main result.</p>
+      <p id="paper-abstract">Neural audio codecs have been widely studied for mono and stereo signals, but spatial audio remains largely unexplored. We present the first discrete neural spatial audio codec for first-order ambisonics (FOA).
+        Building on the WavTokenizer architecture, we extend it to support four-channel FOA signals and introduce a novel spatial consistency loss to preserve directional cues in the reconstructed signals under a highly compressed representation. 
+        Our codec compresses 4-channel FOA audio at 24 kHz into 75 discrete tokens per second, corresponding to a bit rate of 0.9 kbps.
+        Evaluations on simulated reverberant mixtures, non-reverberant clean speech, and FOA mixtures with real room impulse responses show accurate reconstruction, with mean angular errors of 13.76°, 3.96°, and 25.83°, respectively,
+        across the three conditions. In addition, discrete latent representations derived from our codec provide useful features for downstream spatial audio tasks, as demonstrated on sound event localization and detection with STARSS23 real recordings.</p>
     </section>
 
     <section class="demo" aria-labelledby="demo-heading">
       <h2 id="demo-heading">Demo</h2>
-      <p class="desc">Below are four example pairs of audio results from the paper. Each row shows an input–output pair for comparison.</p>
+      <p class="desc">Below are some example pairs of input and reconstructed FOA audio (binaural rendered) results from our codec. </p>
 
       <div class="grid" id="audio-grid">
         <!-- Row 1 -->
